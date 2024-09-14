@@ -1,0 +1,26 @@
+name: postgres
+
+services:
+  db:
+    image: postgres:16.4-alpine
+    restart: always
+    env_file:
+      - ./env/db.env
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  gui:
+    image: dpage/pgadmin4:8.11
+    restart: always
+    env_file:
+      - ./env/gui.env
+    ports:
+      - 8000:80
+    volumes:
+      - gui-data:/var/lib/pgadmin
+
+volumes:
+  db-data:
+  gui-data:
