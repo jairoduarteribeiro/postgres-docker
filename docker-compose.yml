@@ -2,7 +2,7 @@ name: postgres
 
 services:
   db:
-    image: postgres:16.4-alpine
+    image: postgres:17.0-alpine
     restart: always
     env_file:
       - ./env/db.env
@@ -13,7 +13,7 @@ services:
       - ./init:/docker-entrypoint-initdb.d
 
   gui:
-    image: dpage/pgadmin4:8.11
+    image: dpage/pgadmin4:8.12
     restart: always
     env_file:
       - ./env/gui.env
