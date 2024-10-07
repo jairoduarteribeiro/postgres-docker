@@ -74,12 +74,12 @@ This project sets up a PostgreSQL database along with pgAdmin using Docker conta
 To bring up both the PostgreSQL and pgAdmin containers, run:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 This will start the services and display the following output:
 
-_Include image here: [docker-compose up result image]_
+![docker compose up result image](images/01-compose-up.png)
 
 ### Accessing PostgreSQL via Command Line
 
@@ -98,30 +98,30 @@ FROM class c
 JOIN teacher t ON c.teacher_id = t.teacher_id;
 ```
 
-![Command Line Output](images/01-command-line.png)
+![Command Line Output](images/02-command-line.png)
 
 ### Accessing pgAdmin
 
 Open your browser and go to `http://localhost:8000` to access pgAdmin. Log in using the credentials you set in the `gui.env` file.
 
-![pgAdmin Interface](images/02-pgadmin.png)
+![pgAdmin Interface](images/03-pgadmin.png)
 
 Once logged in, you'll see the preconfigured PostgreSQL server in pgAdmin.
 
-![pgAdmin connected to PostgreSQL server](images/03-credentials.png)
+![pgAdmin connected to PostgreSQL server](images/04-credentials.png)
 
 ### Using pgAdmin
 
 Once pgAdmin is set up, you can use it to create other databases, run the query tool, and manage your PostgreSQL server.
 
-![pgAdmin Query Tool](images/04-query.png)
+![pgAdmin Query Tool](images/05-query.png)
 
 ### Stopping the containers
 
 To stop the containers, run:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 This will stop and remove the containers, but the database data will persist in the volumes.
